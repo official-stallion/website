@@ -4,7 +4,7 @@
 FROM golang:latest-alpine as build
 
 # Add Maintainer Info
-LABEL maintainer="Rajeev Singh <rajeevhub@gmail.com>"
+LABEL maintainer="amirhnajafiz"
 
 # Change to app work directory
 WORKDIR /app
