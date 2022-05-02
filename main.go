@@ -10,8 +10,8 @@ import (
 func main() {
 	app := echo.New()
 
-	app.GET("/time", func(c echo.Context) error {
-		return c.String(http.StatusOK, time.Now().GoString())
+	app.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, time.Now().Format(time.RFC1123))
 	})
 
 	app.GET("/hello", func(c echo.Context) error {
