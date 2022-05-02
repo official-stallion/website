@@ -18,5 +18,5 @@ func main() {
 		return c.String(http.StatusOK, "Hello world")
 	})
 
-	_ = app.Start("0.0.0.0:1380")
+	_ = app.Start("0.0.0.0:8080")
 }
