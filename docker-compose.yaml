@@ -1,7 +1,11 @@
 version: "3.9"
 services:
   app:
+    container_name: "gubernetes-container"
+    restart: on-failure
     build:
       dockerfile: Dockerfile
       context: .
       target: dev
+    ports:
+      - "8080:8080"

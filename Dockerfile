@@ -21,5 +21,8 @@ FROM scratch
 # Copy the main file from last image
 COPY --from=build ./app/main ./bin/main
 
+# port
+EXPOSE 8080
+
 # Executing the main file
 ENTRYPOINT ["/bin/main"]
