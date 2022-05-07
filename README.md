@@ -10,6 +10,28 @@ part.
 
 ## Structure
 ### Main
+Our main service is a simple HTTP server implemented in Golang. This 
+service uses _Golang Echo library_ to bring up a simple HTTP server.
+
+You can run the service with following command:
+```shell
+go run main.go
+```
+
+Result would be something like this:
+```shell
+   ____    __
+  / __/___/ /  ___
+ / _// __/ _ \/ _ \
+/___/\__/_//_/\___/ v4.7.1
+High performance, minimalist Go web framework
+https://echo.labstack.com
+____________________________________O/_______
+                                    O\
+⇨ http server started on [::]:8080
+```
+
+Every project has a main function, this is ours.
 
 ### Workflow
 
