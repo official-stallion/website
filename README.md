@@ -182,3 +182,37 @@ helm install release-name ./deployments
 ```
 
 ### Makefile
+For golang projects, it's good to have a Makefile, so you
+don't have to write big commands every time you want to do something.
+
+A simple makefile:
+```makefile
+# run
+run:
+	go run main.go
+# build
+build:
+	go build -o /main
+# docker compose
+docker-compose:
+	docker compose up -d
+# docker build
+docker-build:
+	docker build . -t amirhossein21/gubernetes
+# docker push:
+docker-push:
+	docker push amirhossein21/gubernetes
+# deploy
+up:
+	helm install gubernetes ./deployments
+# redo deployments
+down:
+	helm uninstall gubernetes
+```
+
+And for using our Make commands:
+```
+make run
+make build
+...
+```
