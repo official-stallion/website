@@ -82,9 +82,103 @@ jobs:
 ```
 
 ### Docker
+Docker takes away repetitive,
+mundane configuration tasks and is used throughout 
+the development lifecycle for fast, easy and portable 
+application development – desktop and cloud. 
+Docker’s comprehensive end to end platform includes 
+UIs, CLIs, APIs and security that are engineered to 
+work together across the entire application delivery 
+lifecycle.
+
+When you want to release your service, for testing or even production, you need
+to have an image of your application. For creating an image of your service
+you need to create a dockerfile to dockerize your application.
+
+A simple docker file for golang projects:
+```dockerfile
+# Dockerfile References: https://docs.docker.com/engine/reference/builder/
+
+# Start from the latest golang base image
+FROM golang:1.17-alpine as build
+
+# Add Maintainer Info
+LABEL maintainer="amirhnajafiz"
+
+# Change to app work directory
+WORKDIR /app
+
+# Copy all of the files
+COPY . .
+
+# Building the files
+RUN CGO_ENABLED=0 go build -o ./main
+
+# Building on the scratch base image
+FROM scratch
+
+# Copy the main file from last image
+COPY --from=build ./app/main ./bin/main
+
+# port
+EXPOSE 8080
+
+# Executing the main file
+ENTRYPOINT ["/bin/main"]
+```
 
 ### Docker-Compose
+Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.
+
+Compose works in all environments: production, staging, development, testing, as well as CI workflows. You can learn more about each case in Common Use Cases.
+
+A simple docker-compose file:
+```yaml
+version: "3.9"
+services:
+  app:
+    container_name: "gubernetes-container"
+    restart: on-failure
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: dev
+    ports:
+      - "8080:8080"
+```
 
 ### Deployments
+For deployments, you can use the docker-compose to deploy your
+service on Virtual Machines.
+
+```shell
+docker-compose up -d
+```
+
+But if you want to deploy the project on cloud, you need to have a 
+kubernetes cluster.
+
+For deploying on Kubernetes cluster, I recommend to use Helm Chart.
+Helm helps you manage Kubernetes applications — Helm Charts help you define, install, and upgrade even the most complex Kubernetes application.
+
+If you want to deploy a project with helm, you need to create your charts
+with following commands:
+```shell
+helm create deployments
+```
+
+Now you get something like this:
+```
+|_deployments/
+    |_templates/
+    |_.helmignore
+    |_Chart.yaml
+    |_values.yaml
+```
+
+All you need is to modify the chart and values file and deploy with following command:
+```shell
+helm install release-name ./deployments
+```
 
 ### Makefile
