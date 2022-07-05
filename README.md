@@ -3,7 +3,7 @@
 Basics of implementing a **Golang** project, with **Kubernetes** deployments, using helm charts.
 
 <p align="center"> 
-	<img src="assets/logo.png" width="700" alt="logo" />
+	<img src="assets/logo.webp" width="700" alt="logo" />
 </p>
 
 In this repository, I present every tool that you need to use
