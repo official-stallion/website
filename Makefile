@@ -1,21 +1,12 @@
-# run
-run:
+# run our golang application without building it
+go-run:
 	go run main.go
-# build
-build:
+# build our golang application
+go-build:
 	go build -o /main
-# docker compose
-docker-compose:
-	docker compose up -d
-# docker build
+# docker build of our application
 docker-build:
-	docker build . -t amirhossein21/gubernetes
-# docker push:
+	docker build ./build/Dockerfile -t amirhossein21/k8s-golang
+# docker push to our docker registery
 docker-push:
-	docker push amirhossein21/gubernetes
-# deploy
-up:
-	helm install gubernetes ./deployments
-# redo deployments
-down:
-	helm uninstall gubernetes
+	docker push amirhossein21/k8s-golang
