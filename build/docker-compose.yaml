@@ -1,11 +1,10 @@
 version: "3.9"
 services:
   app:
-    container_name: "gubernetes-container"
+    container_name: "go-worker"
     restart: on-failure
     build:
+      context: ./build/
       dockerfile: Dockerfile
-      context: .
-      target: dev
     ports:
       - "8080:8080"
