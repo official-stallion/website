@@ -6,7 +6,7 @@ go-build:
 	go build -o /main
 # docker build of our application
 docker-build:
-	docker build ./build/Dockerfile -t amirhossein21/k8s-golang
+	docker build . -f ./build/Dockerfile -t amirhossein21/k8s-golang
 # docker push to our docker registery
 docker-push:
 	docker push amirhossein21/k8s-golang
