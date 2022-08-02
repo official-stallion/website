@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: k8s-golang-container
-    image: amirhossein21/k8s-golang
+    image: amirhossein21/k8s-golang:latest
     resources:
       limits:
         memory: "128Mi"

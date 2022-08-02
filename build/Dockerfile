@@ -25,4 +25,4 @@ COPY --from=build ./app/main ./bin/main
 EXPOSE 8080
 
 # Executing the main file
-ENTRYPOINT ["/bin/main"]
+CMD ["/bin/main"]
