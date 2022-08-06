@@ -13,3 +13,10 @@ docker-push:
 # making kubernetes pod
 kube-pod-build:
 	kubectl create -f ./deploy/k8s-golang.yaml
+# deploy using deployment
+kube-make-deploy:
+	kubectl create -f deploy/deployment/deployment.yaml 
+	kubectl create -f deploy/deployment/service.yaml 
+# deploy using helm
+helm-install:
+	helm install deploy/helm k8s-golang
