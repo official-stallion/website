@@ -1,0 +1,1 @@
+document.getElementById("time-div").innerText = new Date().toDateString();
