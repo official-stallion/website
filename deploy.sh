@@ -10,6 +10,10 @@ npm run build
 
 cd ..
 
-mv template/dist/* ./*
+mv template/dist/* .
+
+mkdir assets
+
+mv template/dist/assets/* ./assets
 
 rm -rf template
