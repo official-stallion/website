@@ -11,3 +11,5 @@ npm i
 npm run build
 
 cd ..
+
+mv template/dist/* ./*
