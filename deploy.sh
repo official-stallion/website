@@ -18,12 +18,14 @@ npm run build
 
 cd ..
 
+rm -rf site
+
+mkdir site
+
 # move files
-mv template/dist/* .
+mv template/dist/* ./site
 
-mkdir assets
-
-mv template/dist/assets/* ./assets
+mv template/dist/assets ./site/assets
 
 # remove all
 rm -rf template
