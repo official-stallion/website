@@ -25,10 +25,10 @@ paginate = 5
 
     [languages.en.menu]
       [[languages.en.menu.main]]
-        identifier = "about"
+        identifier = "docs"
         name = "Docs"
-        url = "/about"
+        url = "/docs"
       [[languages.en.menu.main]]
-        identifier = "showcase"
+        identifier = "components"
         name = "Components"
-        url = "/showcase"
+        url = "/components"
