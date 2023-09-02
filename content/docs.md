@@ -1,22 +1,49 @@
 +++
-title = "About"
-date = "2019-01-25"
-author = "Radek"
+title = "docs"
+date = "2023-09-01"
+author = "amirhnajafiz"
 +++
 
-# Hi there
+## How to use?
 
-My name is Radek and I'm the author of this theme. I made it to help you present your ideas easier.
+Get package:
 
-We all know how hard is to start something on the web, especially these days. You need to prepare a bunch of stuff, configure them and when that’s done — create the content.
+```shell
+go get github.com/official-stallion/stallion@latest
+```
 
-This theme is pretty basic and covers all of the essentials. All you have to do is start typing!
+Now to set the client up you need to create a **stallion** server.<br />
+Stallion server is the message broker server.
 
-The theme includes:
+### Create server in Golang
 
-- **5 duotone themes**, depending on your preferences (orange, red, blue, green, pink)
-- [**Fira Code**](https://github.com/tonsky/FiraCode) as default monospaced font. It's gorgeous!
-- **really nice, custom duotone** syntax highlighting based on [**PrismJS**](https://prismjs.com)
-- mobile friendly layout
+```go
+package main
 
-So, there you have it... enjoy!
+import "github.com/official-stallion/stallion"
+
+func main() {
+	if err := stallion.NewServer(":9090"); err != nil {
+		panic(err)
+	}
+}
+```
+
+### Create a server with docker
+
+Check the docker [documentation](https://github.com/official-stallion/stable) for stallion server.
+
+## Creating a server with Auth
+
+You can create a Stallion server with username and password for Auth.
+```go
+package main
+
+import "github.com/official-stallion/stallion"
+
+func main() {
+	if err := stallion.NewServer(":9090", "root", "Pa$$word"); err != nil {
+		panic(err)
+	}
+}
+```
