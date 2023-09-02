@@ -6,8 +6,8 @@ paginate = 5
   contentTypeName = "posts"
   themeColor = "red"
   showMenuItems = 2
-  fullWidthTheme = false
-  centerTheme = false
+  fullWidthTheme = true
+  centerTheme = true
 
 [languages]
   [languages.en]
@@ -21,7 +21,7 @@ paginate = 5
 
     [languages.en.params.logo]
       logoText = "Stallion"
-      logoHomeLink = "/"
+      logoHomeLink = "/website"
 
     [languages.en.menu]
       [[languages.en.menu.main]]
