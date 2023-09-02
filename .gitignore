@@ -2,3 +2,6 @@
 .idea/
 node_modules/
 template
+
+resources/
+.hugo_build.lock
